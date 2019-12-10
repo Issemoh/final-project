@@ -1,14 +1,18 @@
 var express = require('express')
-var client = require('../models').Client
+var Client = require('../models').Client
 
 var router = express.Router()
 
 router.get('/client', function(req, res, next){
-    client.findAll({order: ['name']})
+    Client.findAll({order: ['name']})
         .then(client => {
+            console.log("clients" , client)
             return res.json(client)
         })
-        .catch( err => next.err() )
+        .catch( err => {
+            console.log("error ", err)
+            return next(err)
+         } )
 })
 
 module.exports = router

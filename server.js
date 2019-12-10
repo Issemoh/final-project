@@ -4,7 +4,10 @@ var client_api = require('./routes/Clint')
 
 var app = express()
 
+app.use(bodyParser.json())
+
 app.use('/api', client_api)
+
 
 // Those are Error handlers
 app.use(function(req, res, res, next){
