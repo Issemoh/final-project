@@ -1,6 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var client_api = require('./routes/Clint')
+var client_api = require('./routes/clint')
 
 var app = express()
 

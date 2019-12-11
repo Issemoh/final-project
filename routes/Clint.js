@@ -1,10 +1,10 @@
 var express = require('express')
-var client = require('../models').Client
+var Client = require('../models').Client
 
 var router = express.Router()
 
 router.get('/client', function(req, res, next){
-    client.findAll({order: ['name']})
+    Client.findAll({order: ['name']})
         .then(client => {
             return res.json(client)
         })
